@@ -1,3 +1,5 @@
+import { renderRecipes } from './updateUI';
+
 const searchRecipe = async e => {
 	e.preventDefault();
 
@@ -18,7 +20,7 @@ const searchRecipe = async e => {
 	try {
 		const json = await res.json();
 		console.log(json);
-		return json;
+		renderRecipes(json);
 	} catch (err) {
 		console.error(err);
 	}
