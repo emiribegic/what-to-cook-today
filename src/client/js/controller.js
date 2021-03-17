@@ -4,6 +4,7 @@ const searchRecipe = async e => {
 	e.preventDefault();
 
 	const input = document.querySelector('.search__bar').value;
+	let json;
 
 	// Send input data to server side
 	const res = await fetch('http://localhost:8083/recipe', {
@@ -18,12 +19,14 @@ const searchRecipe = async e => {
 
 	// Receieve fetched data from server side
 	try {
-		const json = await res.json();
+		json = await res.json();
 		console.log(json);
-		renderRecipes(json);
+		// renderRecipes(json);
 	} catch (err) {
 		console.error(err);
 	}
+
+	renderRecipes(json);
 };
 
 export { searchRecipe };
