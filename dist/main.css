@@ -1,0 +1,1 @@
+*{margin:0;padding:0}*,:after,:before{box-sizing:inherit}html{box-sizing:border-box}body{font:400 1rem Dosis,sans-serif}ul{list-style:none}.link{text-decoration:none;color:#000}.spinner{margin:5rem auto;text-align:center}.spinner svg{height:6rem;width:6rem;animation:rotate 2s linear infinite}@keyframes rotate{0%{transform:rotate(0)}to{transform:rotate(1turn)}}

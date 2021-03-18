@@ -1,10 +1,26 @@
 import icons from '@tabler/icons/tabler-sprite.svg';
 console.log(icons);
 
+const main = document.querySelector('main');
+const resultSection = document.querySelector('.result');
+const recipeSection = document.querySelector('.recipe');
+
+const showSpinner = el => {
+	const spinnerHtml = `
+		<div class="spinner">
+      <svg>
+        <use href="${icons}#tabler-loader"></use>
+      </svg>
+    </div>
+	`;
+	el.innerHTML = '';
+	el.insertAdjacentHTML('afterbegin', spinnerHtml);
+};
+
 const renderRecipes = (result = {}) => {
-	const main = document.querySelector('main');
-	const resultSection = document.querySelector('.result');
-	const recipeSection = document.querySelector('.recipe');
+	// const main = document.querySelector('main');
+	// const resultSection = document.querySelector('.result');
+	// const recipeSection = document.querySelector('.recipe');
 	let resultHtml = '';
 	let recipeHtml = '';
 
@@ -71,4 +87,4 @@ const renderRecipes = (result = {}) => {
 	recipeSection.insertAdjacentHTML('afterbegin', recipeHtml);
 };
 
-export { renderRecipes };
+export { main, resultSection, recipeSection, showSpinner, renderRecipes };

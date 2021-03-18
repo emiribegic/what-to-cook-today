@@ -1,0 +1,46 @@
+// FONT
+$font-stack: 400 1rem 'Dosis', sans-serif;
+
+// // COLOR
+// $pink: rgb(255, 192, 203);
+// $blue: rgb(167, 223, 255);
+// $orange: rgb(243, 174, 133);
+// $green: rgb(165, 231, 206);
+
+// // MARGIN
+// $center-w-margin: 0 auto;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75rem; // 1200px
+$bp-large: 62rem; // 992px
+$bp-medium: 48rem; // 768px;
+$bp-small: 30rem; // 480px;
+
+* {
+	margin: 0;
+	padding: 0;
+	// border: 1px solid black;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font: $font-stack;
+}
+
+ul {
+	list-style: none;
+}
+
+.link {
+	text-decoration: none;
+	color: #000;
+}

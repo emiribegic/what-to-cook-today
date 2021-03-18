@@ -1,4 +1,10 @@
-import { renderRecipes } from './updateUI';
+import {
+	main,
+	resultSection,
+	recipeSection,
+	showSpinner,
+	renderRecipes,
+} from './updateUI';
 
 const searchRecipe = async e => {
 	e.preventDefault();
@@ -21,11 +27,11 @@ const searchRecipe = async e => {
 	try {
 		json = await res.json();
 		console.log(json);
-		// renderRecipes(json);
 	} catch (err) {
 		console.error(err);
 	}
 
+	showSpinner(resultSection);
 	renderRecipes(json);
 };
 
