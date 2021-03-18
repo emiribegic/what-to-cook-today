@@ -6,6 +6,10 @@ import {
 	renderRecipes,
 } from './updateUI';
 
+const state = {
+	recipe: {},
+};
+
 const searchRecipe = async e => {
 	e.preventDefault();
 
@@ -29,12 +33,25 @@ const searchRecipe = async e => {
 	// Receieve fetched data from server side
 	try {
 		json = await res.json();
-		console.log(json);
+		// console.log(json);
+		const { recipe } = json.hits[0];
+		state.recipe = {
+			keyword: json.q,
+			count: json.count,
+			url: recipe.url,
+			img: recipe.image,
+			title: recipe.label,
+			calories: recipe.calories,
+			time: recipe.totalTime,
+			publisher: recipe.source,
+			tags: recipe.healthLabels,
+		};
+		console.log(state.recipe);
 	} catch (err) {
 		console.error(err);
 	}
 
-	renderRecipes(json);
+	renderRecipes(state.recipe);
 };
 
-export { searchRecipe };
+export { state, searchRecipe };

@@ -22,7 +22,7 @@ const renderRecipes = (result = {}) => {
 	let recipeHtml = '';
 
 	resultHtml = `
-		<span>${result.count} results for "${result.q}"</span>
+		<span>${result.count} results for "${result.keyword}"</span>
 	`;
 
 	recipeHtml =
@@ -30,35 +30,31 @@ const renderRecipes = (result = {}) => {
 			? `
     <ul class="recipe__container">
       <li class="recipe__card">
-        <a class="link recipe__link" href="${result.hits[0].recipe.url}">
-          <img class="recipe__img" src="${result.hits[0].recipe.image}" alt="${
-					result.hits[0].recipe.label
-			  }">
-          <h2 class="recipe__title">${result.hits[0].recipe.label}</h2>
+        <a class="link recipe__link" href="${result.url}">
+          <img class="recipe__img" src="${result.img}" alt="${result.title}">
+          <h2 class="recipe__title">${result.title}</h2>
           <div class="recipe__meta">
 						<div class="recipe__info">
 							<svg width="24" height="24">
 								<use xlink:href="${icons}#tabler-flame"/>
 							</svg>
-            	<span class="calories">${result.hits[0].recipe.calories.toFixed(
-					0
-				)}calories</span>
+            	<span class="calories">${result.calories.toFixed(0)}calories</span>
 						</div>
 						<div class="recipe__info">
 							<svg width="24" height="24">
 								<use xlink:href="${icons}#tabler-clock"/>
 							</svg>
-							<span class="time">${result.hits[0].recipe.totalTime}mins</span>
+							<span class="time">${result.time}mins</span>
 						</div>
 						<div class="recipe__info">
 							<svg width="24" height="24">
 								<use xlink:href="${icons}#tabler-user"/>
 							</svg>
-            	<span class="publisher">${result.hits[0].recipe.source}</span>
+            	<span class="publisher">${result.publisher}</span>
 						</div>
 						<div class="recipe__info">
             	<ul class="tags">
-								${result.hits[0].recipe.healthLabels
+								${result.tags
 									.slice(0, 5)
 									.map(label => {
 										return `<li class="tag">${label}</li>`;
