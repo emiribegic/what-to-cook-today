@@ -18,16 +18,8 @@ const showSpinner = el => {
 };
 
 const renderRecipes = (result = {}) => {
-	// const main = document.querySelector('main');
-	// const resultSection = document.querySelector('.result');
-	// const recipeSection = document.querySelector('.recipe');
 	let resultHtml = '';
 	let recipeHtml = '';
-
-	if (resultSection && recipeSection) {
-		resultSection.innerHTML = '';
-		recipeSection.innerHTML = '';
-	}
 
 	resultHtml = `
 		<span>${result.count} results for "${result.q}"</span>
@@ -82,6 +74,11 @@ const renderRecipes = (result = {}) => {
 			: `
 		<span>Oops… Try again!</span>
 	`;
+
+	// if (resultSection && recipeSection) {
+	resultSection.innerHTML = '';
+	// showSpinner(recipeSection);
+	recipeSection.innerHTML = '';
 
 	resultSection.insertAdjacentHTML('afterbegin', resultHtml);
 	recipeSection.insertAdjacentHTML('afterbegin', recipeHtml);

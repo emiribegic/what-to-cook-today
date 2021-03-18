@@ -12,6 +12,9 @@ const searchRecipe = async e => {
 	const input = document.querySelector('.search__bar').value;
 	let json;
 
+	// Show spinner
+	showSpinner(recipeSection);
+
 	// Send input data to server side
 	const res = await fetch('http://localhost:8083/recipe', {
 		method: 'POST',
@@ -31,7 +34,6 @@ const searchRecipe = async e => {
 		console.error(err);
 	}
 
-	showSpinner(resultSection);
 	renderRecipes(json);
 };
 
