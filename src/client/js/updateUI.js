@@ -1,3 +1,6 @@
+import icons from '@tabler/icons/tabler-sprite.svg';
+console.log(icons);
+
 const renderRecipes = (result = {}) => {
 	const main = document.querySelector('main');
 	const resultSection = document.querySelector('.result');
@@ -20,23 +23,48 @@ const renderRecipes = (result = {}) => {
     <ul class="recipe__container">
       <li class="recipe__card">
         <a class="link recipe__link" href="${result.hits[0].recipe.url}">
-          <img class="recipe__img" src="${result.hits[0].recipe.image}" alt="${result.hits[0].recipe.label}">
+          <img class="recipe__img" src="${result.hits[0].recipe.image}" alt="${
+					result.hits[0].recipe.label
+			  }">
           <h2 class="recipe__title">${result.hits[0].recipe.label}</h2>
           <div class="recipe__meta">
-            <span class="time">${result.hits[0].recipe.totalTime}mins</span>
-            <span class="publisher">by ${result.hits[0].recipe.source}</span>
-            <ul class="tags">
-              <li class="tag">${result.hits[0].recipe.healthLabels[0]}</li>
-              <li class="tag">${result.hits[0].recipe.healthLabels[1]}</li>
-              <li class="tag">${result.hits[0].recipe.healthLabels[2]}</li>
-            </ul>
+						<div class="recipe__info">
+							<svg width="24" height="24">
+								<use xlink:href="${icons}#tabler-flame"/>
+							</svg>
+            	<span class="calories">${result.hits[0].recipe.calories.toFixed(
+					0
+				)}calories</span>
+						</div>
+						<div class="recipe__info">
+							<svg width="24" height="24">
+								<use xlink:href="${icons}#tabler-clock"/>
+							</svg>
+							<span class="time">${result.hits[0].recipe.totalTime}mins</span>
+						</div>
+						<div class="recipe__info">
+							<svg width="24" height="24">
+								<use xlink:href="${icons}#tabler-user"/>
+							</svg>
+            	<span class="publisher">${result.hits[0].recipe.source}</span>
+						</div>
+						<div class="recipe__info">
+            	<ul class="tags">
+								${result.hits[0].recipe.healthLabels
+									.slice(0, 5)
+									.map(label => {
+										return `<li class="tag">${label}</li>`;
+									})
+									.join('')}
+            	</ul>
+						</div>
           </div>
         </a>
       </li>
     </ul>
   `
 			: `
-		<span>Maybe typo? Please try again 😎🔍</span>
+		<span>Oops… Try again!</span>
 	`;
 
 	resultSection.insertAdjacentHTML('afterbegin', resultHtml);
