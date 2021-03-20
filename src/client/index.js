@@ -5,6 +5,10 @@ import 'regenerator-runtime/runtime';
 import './styles/main.scss';
 
 // JS files
-import { searchRecipe } from './js/controller';
+import { handleRecipe } from './js/controller';
 
-document.querySelector('.search__btn').addEventListener('click', searchRecipe);
+// TODO Where to put e.preventDefault()?
+document.querySelector('.search__btn').addEventListener('click', e => {
+	e.preventDefault();
+	handleRecipe();
+});
