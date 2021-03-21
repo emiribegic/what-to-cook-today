@@ -1,6 +1,8 @@
 import icons from '@tabler/icons/tabler-sprite.svg';
 console.log(icons);
 
+// TODO Webpack not working with private class filed
+
 class RecipeUI {
 	#resultEl = document.querySelector('.result');
 	#recipeEl = document.querySelector('.recipe');
