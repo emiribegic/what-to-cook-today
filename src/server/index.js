@@ -22,7 +22,8 @@ app.post('/recipe', async (req, res) => {
 			`${url}q=${input}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}&from=0&to=3`
 		);
 		const jsonRecipe = await resRecipe.json();
-		if (!resRecipe.ok) throw new Error(`${jsonRecipe.message}`);
+		if (!resRecipe.ok)
+			throw new Error(`${jsonRecipe.message} (${resRecipe.status})`);
 		res.send(jsonRecipe);
 	} catch (err) {
 		console.error(err);
