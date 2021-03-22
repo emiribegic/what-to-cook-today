@@ -7,10 +7,7 @@ export const state = {
 };
 
 export const fetchRecipe = async () => {
-	// e.preventDefault();
-
 	const input = document.querySelector('.search__bar').value;
-	// let json;
 
 	// Send input data to server side
 	const res = await Promise.race([
@@ -29,7 +26,6 @@ export const fetchRecipe = async () => {
 	// Receieve fetched data from server side
 	try {
 		const json = await res.json();
-		// console.log(json);
 
 		const { recipe } = json.hits[0];
 		state.recipe = {
@@ -47,6 +43,4 @@ export const fetchRecipe = async () => {
 	} catch (err) {
 		console.error(err);
 	}
-
-	// renderRecipes(state.recipe);
 };
