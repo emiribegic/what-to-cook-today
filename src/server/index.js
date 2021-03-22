@@ -17,7 +17,13 @@ app.get('/', (req, res) => res.sendFile('index.html', { root: '../../dist' }));
 app.post('/recipe', async (req, res) => {
 	// Receive input data from client side, make API call and send fetched data to client side
 	try {
-		input = req.body.keyword;
+		const input = req.body.keyword;
+		// const resRecipe = await Promise.race([
+		// 	fetch(
+		// 		`${url}q=${input}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}&from=0&to=3`
+		// 	),
+		// 	timeout(timeoutSec),
+		// ]);
 		const resRecipe = await fetch(
 			`${url}q=${input}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}&from=0&to=3`
 		);

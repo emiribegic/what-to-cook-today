@@ -1,3 +1,7 @@
+import { timeout } from './helper';
+import { API_URL } from './config';
+import { TIMEOUT_SEC } from './config';
+
 export const state = {
 	recipe: {},
 };
@@ -9,15 +13,18 @@ export const fetchRecipe = async () => {
 	// let json;
 
 	// Send input data to server side
-	const res = await fetch('http://localhost:8083/recipe', {
-		method: 'POST',
-		credentials: 'same-origin',
-		mode: 'cors',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({ keyword: input }),
-	});
+	const res = await Promise.race([
+		fetch(API_URL, {
+			method: 'POST',
+			credentials: 'same-origin',
+			mode: 'cors',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ keyword: input }),
+		}),
+		timeout(TIMEOUT_SEC),
+	]);
 
 	// Receieve fetched data from server side
 	try {
