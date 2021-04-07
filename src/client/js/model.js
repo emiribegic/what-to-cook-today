@@ -26,7 +26,9 @@ export const fetchRecipe = async () => {
 	// Receieve fetched data from server side
 	try {
 		const json = await res.json();
+		console.log(json);
 
+		if (!json.hits[0]) return;
 		const { recipe } = json.hits[0];
 		state.recipe = {
 			keyword: json.q,
