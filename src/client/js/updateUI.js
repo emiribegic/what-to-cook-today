@@ -20,7 +20,7 @@ class RecipeUI {
 		this.#recipeEl.insertAdjacentHTML('afterbegin', recipeHtml);
 	}
 
-	showSpinner = function () {
+	showSpinner() {
 		const spinnerHtml = `
 			<div class="spinner">
 				<svg>
@@ -30,7 +30,7 @@ class RecipeUI {
 		`;
 		this.#clear();
 		this.#recipeEl.insertAdjacentHTML('afterbegin', spinnerHtml);
-	};
+	}
 
 	#generateResultHtml() {
 		return `
