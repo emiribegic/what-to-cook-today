@@ -34,58 +34,65 @@ class RecipeUI {
 	}
 
 	#generateResultHtml() {
-		return !this.#data.count
+		return !this.#data.searchResults.count
 			? `
 			<span>${this.#errorMessage}</span>
 		`
 			: `
-		<span>${this.#data.count} results for "${this.#data.keyword}"</span>
+		<span>${this.#data.searchResults.count} results for "${
+					this.#data.searchResults.keyword
+			  }"</span>
 	`;
 	}
 
 	#generateRecipeHtml() {
-		return !this.#data.count
+		console.log(this.#data.recipes);
+		return !this.#data.searchResults.count
 			? (this.#recipeEl.innerHTML = '')
-			: `
-				<ul class="recipe__container">
-					<li class="recipe__card">
-						<a class="link recipe__link" href="${this.#data.url}">
-							<img class="recipe__img" src="${this.#data.img}" alt="${this.#data.title}">
-							<h2 class="recipe__title">${this.#data.title}</h2>
-							<div class="recipe__meta">
-								<div class="recipe__info">
-									<svg width="24" height="24">
-										<use xlink:href="${icons}#tabler-flame"/>
-									</svg>
-									<span class="calories">${this.#data.calories.toFixed(0)}calories</span>
-								</div>
-								<div class="recipe__info">
-									<svg width="24" height="24">
-										<use xlink:href="${icons}#tabler-clock"/>
-									</svg>
-									<span class="time">${this.#data.time}mins</span>
-								</div>
-								<div class="recipe__info">
-									<svg width="24" height="24">
-										<use xlink:href="${icons}#tabler-user"/>
-									</svg>
-									<span class="publisher">${this.#data.publisher}</span>
-								</div>
-								<div class="recipe__info">
-									<ul class="tags">
-										${this.#data.tags
-											.slice(0, 5)
-											.map(label => {
-												return `<li class="tag">${label}</li>`;
-											})
-											.join('')}
-									</ul>
-								</div>
+			: this.#data.recipes.map(this.#generateRecipeCard).join('');
+	}
+
+	#generateRecipeCard(result) {
+		return `
+			<ul class="recipe__container">
+				<li class="recipe__card">
+					<a class="link recipe__link" href="${result.url} "target="_blank">
+						<img class="recipe__img" src="${result.img}" alt="${result.title}">
+						<h2 class="recipe__title">${result.title}</h2>
+						<div class="recipe__meta">
+							<div class="recipe__info">
+								<svg width="24" height="24">
+									<use xlink:href="${icons}#tabler-flame"/>
+								</svg>
+								<span class="calories">${result.calories.toFixed(0)}calories</span>
 							</div>
-						</a>
-					</li>
-				</ul>
-			`;
+							<div class="recipe__info">
+								<svg width="24" height="24">
+									<use xlink:href="${icons}#tabler-clock"/>
+								</svg>
+								<span class="time">${result.time}mins</span>
+							</div>
+							<div class="recipe__info">
+								<svg width="24" height="24">
+									<use xlink:href="${icons}#tabler-user"/>
+								</svg>
+								<span class="publisher">${result.publisher}</span>
+							</div>
+							<div class="recipe__info">
+								<ul class="tags">
+									${result.tags
+										.slice(0, 5)
+										.map(label => {
+											return `<li class="tag">${label}</li>`;
+										})
+										.join('')}
+								</ul>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		`;
 	}
 }
 

@@ -19,7 +19,7 @@ app.post('/recipe', async (req, res) => {
 	try {
 		const input = req.body.keyword;
 		const resRecipe = await fetch(
-			`${url}q=${input}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}&from=0&to=3`
+			`${url}q=${input}&app_id=${process.env.API_ID}&app_key=${process.env.API_KEY}&from=0&to=10`
 		);
 		const jsonRecipe = await resRecipe.json();
 		if (!resRecipe.ok)
