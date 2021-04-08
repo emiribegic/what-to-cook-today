@@ -5,7 +5,7 @@ class RecipeUI {
 	#resultEl = document.querySelector('.result');
 	#recipeEl = document.querySelector('.recipe');
 	#data;
-	#errorMessage = 'Oops, we could not find recipes, please try again!';
+	#errorMessage = 'Oops, we could not find any recipes, please try again!';
 
 	#clear() {
 		this.#resultEl.innerHTML = '';
@@ -70,7 +70,11 @@ class RecipeUI {
 								<svg width="24" height="24">
 									<use xlink:href="${icons}#tabler-clock"/>
 								</svg>
-								<span class="time">${result.time}mins</span>
+								<span class="time">${
+									result.time > 0
+										? result.time + 'mins'
+										: 'Not mentioned'
+								}</span>
 							</div>
 							<div class="recipe__info">
 								<svg width="24" height="24">
