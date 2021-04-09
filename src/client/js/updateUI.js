@@ -4,7 +4,8 @@ console.log(icons);
 class RecipeUI {
 	#resultEl = document.querySelector('.result');
 	#recipeEl = document.querySelector('.recipe');
-	#data;
+	#resultData;
+	#recipeData;
 	#errorMessage = 'Oops, we could not find any recipes, please try again!';
 
 	#clear() {
@@ -12,8 +13,9 @@ class RecipeUI {
 		this.#recipeEl.innerHTML = '';
 	}
 
-	render(data) {
-		this.#data = data;
+	render(resultData, recipeData) {
+		this.#resultData = resultData;
+		this.#recipeData = recipeData;
 		const resultHtml = this.#generateResultHtml();
 		const recipeHtml = this.#generateRecipeHtml();
 		this.#clear();
@@ -34,22 +36,23 @@ class RecipeUI {
 	}
 
 	#generateResultHtml() {
-		return !this.#data.searchResults.count
+		return !this.#resultData.searchResults.count
 			? `
 			<span>${this.#errorMessage}</span>
 		`
 			: `
-		<span>${this.#data.searchResults.count} results for "${
-					this.#data.searchResults.keyword
-			  }"</span>
+		<span>${
+			this.#resultData.searchResults.count <= 100
+				? this.#resultData.searchResults.count
+				: 100
+		} results for "${this.#resultData.searchResults.keyword}"</span>
 	`;
 	}
 
 	#generateRecipeHtml() {
-		console.log(this.#data.recipes);
-		return !this.#data.searchResults.count
+		return !this.#resultData.searchResults.count
 			? (this.#recipeEl.innerHTML = '')
-			: this.#data.recipes.map(this.#generateRecipeCard).join('');
+			: this.#recipeData.map(this.#generateRecipeCard).join('');
 	}
 
 	#generateRecipeCard(result) {

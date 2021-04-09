@@ -9,8 +9,8 @@ const handleRecipe = async () => {
 
 		recipeUI.showSpinner();
 		await model.fetchRecipe(input);
-		recipeUI.render(model.state);
-		console.log(model.state);
+		recipeUI.render(model.state, model.resultsPerPage());
+		console.log(model.state, model.resultsPerPage());
 	} catch (err) {
 		console.error(err);
 	}
