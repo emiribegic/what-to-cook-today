@@ -1,4 +1,5 @@
 import icons from '@tabler/icons/tabler-sprite.svg';
+import { shortEnglishHumanizer } from './helper';
 console.log(icons);
 
 class RecipeUI {
@@ -67,7 +68,7 @@ class RecipeUI {
 								<svg width="24" height="24">
 									<use xlink:href="${icons}#tabler-flame"/>
 								</svg>
-								<span class="calories">${result.calories.toFixed(0)}calories</span>
+								<span class="calories">${result.calories.toFixed(0)} calories</span>
 							</div>
 							<div class="recipe__info">
 								<svg width="24" height="24">
@@ -75,7 +76,9 @@ class RecipeUI {
 								</svg>
 								<span class="time">${
 									result.time > 0
-										? result.time + 'mins'
+										? shortEnglishHumanizer(
+												result.time * 60 * 1000
+										  )
 										: 'Not mentioned'
 								}</span>
 							</div>
