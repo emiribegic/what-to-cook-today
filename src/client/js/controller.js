@@ -1,6 +1,6 @@
 import * as model from './model.js';
-import recipeUI from './updateUI';
-import searchForm from './formHandler';
+import recipeUI from './recipeUI';
+import searchForm from './searchForm';
 
 const handleRecipe = async () => {
 	try {
