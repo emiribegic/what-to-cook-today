@@ -3,11 +3,11 @@ class SearchForm {
 
 	getQuery() {
 		const input = this._parentElement.querySelector('.search__bar').value;
-		this.#clearInput();
+		this._clearInput();
 		return input;
 	}
 
-	#clearInput() {
+	_clearInput() {
 		this._parentElement.querySelector('.search__bar').value = '';
 	}
 
