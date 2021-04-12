@@ -26,7 +26,8 @@ export const fetchRecipe = async input => {
 	// Receieve fetched data from server side
 	try {
 		const json = await res.json();
-		console.log(json);
+		// TODO Delete later
+		// console.log(json);
 
 		// TODO Currently logs the error msg but with return no msg will be logged
 		// if (!json.hits[0]) return;
