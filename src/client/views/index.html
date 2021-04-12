@@ -8,18 +8,23 @@
 </head>
 
 <body>
-    <header>What To Cook Today?</header>
-    <main>
-        <section class="search">
-            <form class="search__form">
-                <input type="text" class="search__bar" name="input" required placeholder="Search for a recipe">
-                <button class="btn search__btn">Search</button>
-            </form>
-        </section>
-        <section class="result"></section>
-        <section class="recipe"></section>
-    </main>
-    <footer></footer>
+    <div class="container">
+        <header>What To Cook Today?</header>
+        <main>
+            <section class="search">
+                <form class="search__form">
+                    <input type="text" class="search__bar" name="input" required placeholder="Search for a recipe">
+                    <button class="btn search__btn">Search</button>
+                </form>
+            </section>
+            <section class="result">
+                <div class="result__count"></div>
+                <div class="result__recipe"></div>
+                <div class="result__pagination"></div>
+            </section>
+        </main>
+        <footer></footer>
+    </div>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ import { shortEnglishHumanizer } from './helper';
 // console.log(icons);
 
 class RecipeUI extends BaseUI {
-	_parentElement = document.querySelector('.recipe');
+	_parentElement = document.querySelector('.result__recipe');
 
 	_generateMarkup() {
 		return !this._data ||
