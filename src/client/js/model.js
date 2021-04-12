@@ -47,12 +47,14 @@ export const fetchRecipe = async input => {
 				tags: rec.recipe.healthLabels,
 			};
 		});
+
+		state.page = 1; // Reset page to 1 whenever new search
 	} catch (err) {
 		console.error(err);
 	}
 };
 
-export const resultsPerPage = function (page = state.page) {
+export const getResultsPerPage = function (page = state.page) {
 	state.page = page;
 	const start = (page - 1) * state.recipesPerPage; // 0
 	const end = page * state.recipesPerPage; // 10

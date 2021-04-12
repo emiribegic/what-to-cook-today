@@ -18,11 +18,11 @@ const handleRecipe = async () => {
 		searchResultUI.render(model.state);
 
 		// 4. Show 10 results
-		recipeUI.render(model.resultsPerPage());
+		recipeUI.render(model.getResultsPerPage());
 
 		// 5. Show pagination
 		paginationUI.render(model.state);
-		console.log(model.state, model.resultsPerPage());
+		console.log(model.state, model.getResultsPerPage());
 	} catch (err) {
 		console.error(err);
 	}
@@ -30,7 +30,7 @@ const handleRecipe = async () => {
 
 const handlePage = function (goToPage) {
 	// 1. Show new results
-	recipeUI.render(model.resultsPerPage(goToPage));
+	recipeUI.render(model.getResultsPerPage(goToPage));
 
 	// 2. Show pagination based on user clicks
 	paginationUI.render(model.state);
