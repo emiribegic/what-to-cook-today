@@ -27,7 +27,7 @@ class RecipeUI extends BaseUI {
 								<svg width="24" height="24">
 									<use xlink:href="${icons}#tabler-flame"/>
 								</svg>
-								<span class="calories">${result.calories.toFixed(0)} calories</span>
+								<span class="calories">${result.calories.toFixed(0)} kcal</span>
 							</div>
 							<div class="recipe__info">
 								<svg width="24" height="24">
