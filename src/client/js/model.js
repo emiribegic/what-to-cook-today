@@ -33,7 +33,7 @@ export const fetchRecipe = async input => {
 		// if (!json.hits[0]) return;
 		state.searchResults = {
 			keyword: json.q,
-			count: json.count,
+			count: json.hits.length,
 		};
 
 		state.recipes = json.hits.map(rec => {
@@ -51,6 +51,7 @@ export const fetchRecipe = async input => {
 		state.page = 1; // Reset page to 1 whenever new search
 	} catch (err) {
 		console.error(err);
+		throw err;
 	}
 };
 

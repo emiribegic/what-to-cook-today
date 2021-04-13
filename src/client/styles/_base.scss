@@ -48,7 +48,7 @@ ul {
 // TODO CHECK IF THIS IS RIGHT WAY TO USE SVG FROM PACKAGE!
 .btn {
 	&--search {
-		background: url('../../../node_modules/@tabler/icons/icons/search.svg')
+		background: url(../../../node_modules/@tabler/icons/icons/search.svg)
 			center no-repeat;
 		width: 24px;
 		height: 24px;

@@ -1,9 +1,14 @@
 import icons from '@tabler/icons/tabler-sprite.svg';
+// TODO Delete later
+// console.log(icons);
 
 export default class BaseUI {
 	_data;
 
 	render(data) {
+		if (!data || (Array.isArray(data) && data.length === 0))
+			return this.showError();
+
 		this._data = data;
 
 		const markup = this._generateMarkup();
@@ -13,6 +18,14 @@ export default class BaseUI {
 
 	_clear() {
 		this._parentElement.innerHTML = '';
+	}
+
+	showSearching() {
+		const markup = `
+      <span>Searching...</span>
+    `;
+		this._clear();
+		this._parentElement.insertAdjacentHTML('afterbegin', markup);
 	}
 
 	showSpinner() {
@@ -29,9 +42,7 @@ export default class BaseUI {
 
 	showError(message = this._errorMessage) {
 		const markup = `
-      <div class="error">
-        <span>${message}</span>
-      </div>
+      <span class="error">${message}</span>
     `;
 		this._clear();
 		this._parentElement.insertAdjacentHTML('afterbegin', markup);

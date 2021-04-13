@@ -2,17 +2,13 @@ import icons from '@tabler/icons/tabler-sprite.svg';
 import BaseUI from './baseUI';
 
 import { shortEnglishHumanizer } from './helper';
-// TODO Delete later
-// console.log(icons);
 
 class RecipeUI extends BaseUI {
 	_parentElement = document.querySelector('.result__recipe');
+	_errorMessage = 'Oops, we could not find any recipes, please try again!';
 
 	_generateMarkup() {
-		return !this._data ||
-			(Array.isArray(this._data) && this._data.length === 0)
-			? (this._parentElement.innerHTML = '')
-			: this._data.map(this._generateRecipeCard).join('');
+		return this._data.map(this._generateRecipeCard).join('');
 	}
 
 	_generateRecipeCard(result) {

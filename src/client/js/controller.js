@@ -11,6 +11,7 @@ const handleRecipe = async () => {
 		if (!input) return;
 
 		// 2. Show spinner while fetching data
+		searchResultUI.showSearching();
 		recipeUI.showSpinner();
 		await model.fetchRecipe(input);
 
@@ -25,6 +26,8 @@ const handleRecipe = async () => {
 		console.log(model.state, model.getResultsPerPage());
 	} catch (err) {
 		console.error(err);
+		searchResultUI.showError();
+		recipeUI.showError('Connection refused: failed to load recipe data');
 	}
 };
 
