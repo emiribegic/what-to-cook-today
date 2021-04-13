@@ -45,6 +45,7 @@ ul {
 	color: #000;
 }
 
+// TODO CHECK IF THIS IS RIGHT WAY TO USE SVG FROM PACKAGE!
 .btn {
 	&--search {
 		background: url('../../../node_modules/@tabler/icons/icons/search.svg')
