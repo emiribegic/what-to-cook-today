@@ -44,3 +44,13 @@ ul {
 	text-decoration: none;
 	color: #000;
 }
+
+.btn {
+	&--search {
+		background: url('../../../node_modules/@tabler/icons/icons/search.svg')
+			center no-repeat;
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+	}
+}
