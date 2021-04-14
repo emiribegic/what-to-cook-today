@@ -19,3 +19,14 @@
 		transform: rotate(360deg);
 	}
 }
+
+// TODO CHECK IF THIS IS RIGHT WAY TO USE SVG FROM PACKAGE!
+.search {
+	&__btn {
+		background: url(../../../node_modules/@tabler/icons/icons/search.svg)
+			center no-repeat;
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+	}
+}
