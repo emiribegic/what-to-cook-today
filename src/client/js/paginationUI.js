@@ -7,7 +7,7 @@ class PaginationUI extends BaseUI {
 	addHandlerClick(handler) {
 		this._parentElement.addEventListener('click', function (e) {
 			e.preventDefault();
-			const btn = e.target.closest('.btn--page');
+			const btn = e.target.closest('.result__btn');
 			if (!btn) return;
 
 			const goToPage = +btn.dataset.goto;
@@ -25,7 +25,9 @@ class PaginationUI extends BaseUI {
 		if (curPage === 1 && numPage > 1) {
 			return `
         <span>Page ${curPage} of ${numPage}</span>
-        <button data-goto="${curPage + 1}" class="btn btn--page btn--next">
+        <button data-goto="${
+			curPage + 1
+		}" class="btn result__btn result__btn--next">
           <svg class="icon" width="24" height="24">
 						<use xlink:href="${icons}#tabler-chevron-right"/>
 					</svg>
@@ -36,7 +38,9 @@ class PaginationUI extends BaseUI {
 		// Last page
 		if (curPage === numPage && numPage > 1) {
 			return `
-        <button data-goto="${curPage - 1}" class="btn btn--page btn--prev">
+        <button data-goto="${
+			curPage - 1
+		}" class="btn result__btn result__btn--prev">
           <svg class="icon" width="24" height="24">
 						<use xlink:href="${icons}#tabler-chevron-left"/>
 					</svg>
@@ -48,13 +52,17 @@ class PaginationUI extends BaseUI {
 		// Others
 		if (curPage < numPage) {
 			return `
-        <button data-goto="${curPage - 1}" class="btn btn--page btn--prev">
+        <button data-goto="${
+			curPage - 1
+		}" class="btn result__btn result__btn--prev">
           <svg class="icon" width="24" height="24">
 						<use xlink:href="${icons}#tabler-chevron-left"/>
 					</svg>
         </button>
         <span>Page ${curPage} of ${numPage}</span>
-        <button data-goto="${curPage + 1}" class="btn btn--page btn--next">
+        <button data-goto="${
+			curPage + 1
+		}" class="btn result__btn result__btn--next">
           <svg class="icon" width="24" height="24">
 						<use xlink:href="${icons}#tabler-chevron-right"/>
 					</svg>
