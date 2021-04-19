@@ -36,6 +36,19 @@ body {
 	font: $font-stack;
 }
 
+.container {
+	margin: 0 auto;
+	width: 90vw;
+}
+
+img {
+	// Responsive
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	display: block;
+}
+
 ul {
 	list-style: none;
 }
@@ -43,4 +56,9 @@ ul {
 .link {
 	text-decoration: none;
 	color: #000;
+}
+
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
 }

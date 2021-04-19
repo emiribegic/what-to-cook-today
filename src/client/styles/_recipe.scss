@@ -20,15 +20,10 @@
 	}
 }
 
-// TODO CHECK IF THIS IS RIGHT WAY TO USE SVG FROM PACKAGE!
-.search {
-	&__btn {
-		// background: url(../img/symbol-defs.svg#icon-search) center no-repeat;
-		cursor: pointer;
+.recipe {
+	&__result {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+		gap: 1rem;
 	}
-}
-
-.icon {
-	width: 1.5rem;
-	height: 1.5rem;
 }
