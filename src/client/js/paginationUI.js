@@ -1,13 +1,13 @@
-import icons from '@tabler/icons/tabler-sprite.svg';
+import icons from '../img/symbol-defs.svg';
 import BaseUI from './baseUI';
 
 class PaginationUI extends BaseUI {
-	_parentElement = document.querySelector('.result__pagination');
+	_parentElement = document.querySelector('.recipe__pagination');
 
 	addHandlerClick(handler) {
 		this._parentElement.addEventListener('click', function (e) {
 			e.preventDefault();
-			const btn = e.target.closest('.result__btn');
+			const btn = e.target.closest('.recipe__btn');
 			if (!btn) return;
 
 			const goToPage = +btn.dataset.goto;
@@ -27,9 +27,9 @@ class PaginationUI extends BaseUI {
         <span>Page ${curPage} of ${numPage}</span>
         <button data-goto="${
 			curPage + 1
-		}" class="btn result__btn result__btn--next">
-          <svg class="icon" width="24" height="24">
-						<use xlink:href="${icons}#tabler-chevron-right"/>
+		}" class="btn recipe__btn recipe__btn--next">
+          <svg class="icon icon-next">
+						<use xlink:href="${icons}#icon-next" />
 					</svg>
         </button>
       `;
@@ -40,9 +40,9 @@ class PaginationUI extends BaseUI {
 			return `
         <button data-goto="${
 			curPage - 1
-		}" class="btn result__btn result__btn--prev">
-          <svg class="icon" width="24" height="24">
-						<use xlink:href="${icons}#tabler-chevron-left"/>
+		}" class="btn recipe__btn recipe__btn--prev">
+          <svg class="icon icon-previous">
+						<use xlink:href="${icons}#icon-previous" />
 					</svg>
         </button>
         <span>Page ${curPage} of ${numPage}</span>
@@ -54,18 +54,18 @@ class PaginationUI extends BaseUI {
 			return `
         <button data-goto="${
 			curPage - 1
-		}" class="btn result__btn result__btn--prev">
-          <svg class="icon" width="24" height="24">
-						<use xlink:href="${icons}#tabler-chevron-left"/>
-					</svg>
+		}" class="btn recipe__btn recipe__btn--prev">
+          <svg class="icon icon-previous">
+            <use xlink:href="${icons}#icon-previous" />
+          </svg>
         </button>
         <span>Page ${curPage} of ${numPage}</span>
         <button data-goto="${
 			curPage + 1
-		}" class="btn result__btn result__btn--next">
-          <svg class="icon" width="24" height="24">
-						<use xlink:href="${icons}#tabler-chevron-right"/>
-					</svg>
+		}" class="btn recipe__btn recipe__btn--next">
+          <svg class="icon icon-next">
+            <use xlink:href="${icons}#icon-next" />
+          </svg>
         </button>
       `;
 		}

@@ -1,7 +1,7 @@
 import BaseUI from './baseUI';
 
 class SearchResultUI extends BaseUI {
-	_parentElement = document.querySelector('.result__count');
+	_parentElement = document.querySelector('.recipe__count');
 	_errorMessage = '';
 
 	_generateMarkup() {

@@ -23,10 +23,12 @@
 // TODO CHECK IF THIS IS RIGHT WAY TO USE SVG FROM PACKAGE!
 .search {
 	&__btn {
-		background: url(../../../node_modules/@tabler/icons/icons/search.svg)
-			center no-repeat;
-		width: 24px;
-		height: 24px;
+		// background: url(../img/symbol-defs.svg#icon-search) center no-repeat;
 		cursor: pointer;
 	}
+}
+
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
 }

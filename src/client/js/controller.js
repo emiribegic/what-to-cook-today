@@ -4,6 +4,10 @@ import searchResultUI from './searchResultUI';
 import recipeUI from './recipeUI';
 import paginationUI from './paginationUI';
 
+const handleForm = function () {
+	searchForm.showSearchIcon();
+};
+
 const handleRecipe = async () => {
 	try {
 		// 1. Get user input
@@ -41,6 +45,7 @@ const handlePage = function (goToPage) {
 
 // PUBLISHER AND SUBSCRIBER PATTERN
 export const init = function () {
+	searchForm.addHandlerIcon(handleForm);
 	searchForm.addHandlerSearch(handleRecipe);
 	paginationUI.addHandlerClick(handlePage);
 };

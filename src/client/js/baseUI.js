@@ -1,6 +1,4 @@
-import icons from '@tabler/icons/tabler-sprite.svg';
-// TODO Delete later
-// console.log(icons);
+import icons from '../img/symbol-defs.svg';
 
 export default class BaseUI {
 	_data;
@@ -31,8 +29,8 @@ export default class BaseUI {
 	showSpinner() {
 		const markup = `
 			<div class="spinner">
-				<svg>
-					<use href="${icons}#tabler-loader"></use>
+        <svg class="icon icon-spinner">
+					<use xlink:href="${icons}#icon-spinner" />
 				</svg>
 			</div>
 		`;

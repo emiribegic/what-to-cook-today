@@ -1,6 +1,5 @@
 {
 	"dependencies": {
-		"@tabler/icons": "^1.39.1",
 		"core-js": "^3.9.1",
 		"cors": "^2.8.5",
 		"dotenv": "^8.2.0",

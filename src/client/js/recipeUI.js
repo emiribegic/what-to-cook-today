@@ -1,10 +1,10 @@
-import icons from '@tabler/icons/tabler-sprite.svg';
+import icons from '../img/symbol-defs.svg';
 import BaseUI from './baseUI';
 
 import { shortEnglishHumanizer } from './helper';
 
 class RecipeUI extends BaseUI {
-	_parentElement = document.querySelector('.result__recipe');
+	_parentElement = document.querySelector('.recipe__result');
 	_errorMessage = 'Oops, we could not find any recipes, please try again!';
 
 	_generateMarkup() {
@@ -20,16 +20,16 @@ class RecipeUI extends BaseUI {
 						<h2 class="recipe__title">${result.title}</h2>
 						<div class="recipe__meta">
 							<div class="recipe__info">
-								<svg width="24" height="24">
-									<use xlink:href="${icons}#tabler-flame"/>
+								<svg class="icon icon-calories">
+									<use xlink:href="${icons}#icon-calories" />
 								</svg>
-								<span class="calories">${result.calories.toFixed(0)} kcal</span>
+								<span class="recipe__calories">${result.calories.toFixed(0)} kcal</span>
 							</div>
 							<div class="recipe__info">
-								<svg width="24" height="24">
-									<use xlink:href="${icons}#tabler-clock"/>
+								<svg class="icon icon-time">
+									<use xlink:href="${icons}#icon-time" />
 								</svg>
-								<span class="time">${
+								<span class="recipe__time">${
 									result.time > 0
 										? shortEnglishHumanizer(
 												result.time * 60 * 1000
@@ -38,17 +38,17 @@ class RecipeUI extends BaseUI {
 								}</span>
 							</div>
 							<div class="recipe__info">
-								<svg width="24" height="24">
-									<use xlink:href="${icons}#tabler-user"/>
+								<svg class="icon icon-author">
+									<use xlink:href="${icons}#icon-author" />
 								</svg>
-								<span class="publisher">${result.publisher}</span>
+								<span class="recipe__publisher">${result.publisher}</span>
 							</div>
 							<div class="recipe__info">
-								<ul class="tags">
+								<ul class="recipe__tags">
 									${result.tags
 										.slice(0, 5)
 										.map(label => {
-											return `<li class="tag">${label}</li>`;
+											return `<li class="recipe__tag">${label}</li>`;
 										})
 										.join('')}
 								</ul>
