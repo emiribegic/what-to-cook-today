@@ -13,7 +13,6 @@ class RecipeUI extends BaseUI {
 
 	_generateRecipeCard(result) {
 		return `
-			<ul class="recipe__container">
 				<li class="recipe__card">
 					<a class="link recipe__link" href="${result.url} "target="_blank">
 						<img class="recipe__img" src="${result.img}" alt="${result.title}">
@@ -56,7 +55,6 @@ class RecipeUI extends BaseUI {
 						</div>
 					</a>
 				</li>
-			</ul>
 		`;
 	}
 }
