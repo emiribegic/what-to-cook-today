@@ -2,22 +2,18 @@
 	padding: 1rem;
 
 	&__form {
-		border: 1px solid #777;
 		display: flex;
 		justify-content: space-between;
+		border: 1px solid #777;
 	}
 
 	&__bar {
-		border: none;
 		flex-grow: 1; // default 0
+		height: 2rem;
+		border: none;
 
 		&:focus {
 			outline: none;
 		}
 	}
 }
-
-// .icon-search {
-// 	display: inline-block;
-// 	vertical-align: middle;
-// }
