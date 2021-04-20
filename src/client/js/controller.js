@@ -3,9 +3,11 @@ import searchForm from './searchForm';
 import searchResultUI from './searchResultUI';
 import recipeUI from './recipeUI';
 import paginationUI from './paginationUI';
+import renderIcons from './renderIcons.js';
 
-const handleForm = function () {
-	searchForm.showSearchIcon();
+// Load icons
+const loadIcons = function () {
+	renderIcons.render();
 };
 
 const handleRecipe = async () => {
@@ -45,7 +47,7 @@ const handlePage = function (goToPage) {
 
 // PUBLISHER AND SUBSCRIBER PATTERN
 export const init = function () {
-	searchForm.addHandlerIcon(handleForm);
+	renderIcons.addHandlerIcons(loadIcons);
 	searchForm.addHandlerSearch(handleRecipe);
 	paginationUI.addHandlerClick(handlePage);
 };
