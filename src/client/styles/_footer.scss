@@ -1,6 +1,3 @@
-$font-half: 400 0.5rem 'Dosis', sans-serif;
-$grey: #777;
-
 .footer {
 	// display: flex;
 	// flex-direction: column;
@@ -26,7 +23,7 @@ $grey: #777;
 
 	&__disclaimer {
 		font: $font-half;
-		color: $grey;
+		color: $dark-grey;
 		text-align: end;
 	}
 }

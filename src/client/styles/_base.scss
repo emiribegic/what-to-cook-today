@@ -1,7 +1,10 @@
 // FONT
 $font-stack: 400 1rem 'Dosis', sans-serif;
+$font-half: 400 0.5rem 'Dosis', sans-serif;
 
 // // COLOR
+$light-grey: rgb(161, 161, 161);
+$dark-grey: #777;
 // $pink: rgb(255, 192, 203);
 // $blue: rgb(167, 223, 255);
 // $orange: rgb(243, 174, 133);
@@ -11,10 +14,10 @@ $font-stack: 400 1rem 'Dosis', sans-serif;
 // $center-w-margin: 0 auto;
 
 // RESPONSIVE BREAKPOINTS
-$bp-largest: 75rem; // 1200px
-$bp-large: 62rem; // 992px
-$bp-medium: 48rem; // 768px;
-$bp-small: 30rem; // 480px;
+// $bp-largest: 75rem; // 1200px
+// $bp-large: 62rem; // 992px
+$bp-medium: 49rem; // 784px;
+$bp-small: 33rem; // 528px;
 
 * {
 	margin: 0;

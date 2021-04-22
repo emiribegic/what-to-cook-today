@@ -16,8 +16,8 @@ class RecipeUI extends BaseUI {
 				<li class="recipe__card">
 					<a class="link recipe__link" href="${result.url} "target="_blank">
 						<img class="recipe__img" src="${result.img}" alt="${result.title}">
-						<h2 class="recipe__title">${result.title}</h2>
 						<div class="recipe__meta">
+							<h2 class="recipe__title">${result.title}</h2>
 							<div class="recipe__info">
 								<svg class="icon icon-calories">
 									<use xlink:href="${icons}#icon-calories" />
