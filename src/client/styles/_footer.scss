@@ -1,0 +1,41 @@
+$font-half: 400 0.5rem 'Dosis', sans-serif;
+$grey: #777;
+
+.footer {
+	// display: flex;
+	// flex-direction: column;
+	display: block;
+	align-items: center;
+	// background: rgb(255, 231, 151);
+
+	&__nav {
+		display: flex;
+		// flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__contact {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__sns {
+		margin: 0 0.5rem;
+	}
+
+	&__disclaimer {
+		font: $font-half;
+		color: $grey;
+		text-align: end;
+	}
+}
+
+.icon-sns {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+#edamam-badge {
+	width: 15%;
+}

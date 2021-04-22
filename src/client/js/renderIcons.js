@@ -39,7 +39,7 @@ class RenderIcons {
 		return `
 			<li class="footer__sns">
 				<a class="link footer__link " href="${snsData.href}" target="_blank">
-					<svg class="icon icon-${snsData.name}">
+					<svg class="icon icon-sns icon-${snsData.name}">
 						<use xlink:href="${icons}#icon-${snsData.name}" />
 					</svg>
 				</a>
