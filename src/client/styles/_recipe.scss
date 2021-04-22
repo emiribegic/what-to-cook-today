@@ -33,4 +33,20 @@
 		align-items: stretch;
 		padding: 1rem;
 	}
+
+	&__btn {
+		margin: 0 0.5rem;
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+	}
+
+	&__pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
 }
