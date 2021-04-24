@@ -19,13 +19,13 @@ class RecipeUI extends BaseUI {
 						<div class="recipe__meta">
 							<h2 class="recipe__title">${result.title}</h2>
 							<div class="recipe__info">
-								<svg class="icon icon-calories">
+								<svg class="icon recipe__icon">
 									<use xlink:href="${icons}#icon-calories" />
 								</svg>
 								<span class="recipe__calories">${result.calories.toFixed(0)} kcal</span>
 							</div>
 							<div class="recipe__info">
-								<svg class="icon icon-time">
+								<svg class="icon recipe__icon">
 									<use xlink:href="${icons}#icon-time" />
 								</svg>
 								<span class="recipe__time">${
@@ -37,12 +37,12 @@ class RecipeUI extends BaseUI {
 								}</span>
 							</div>
 							<div class="recipe__info">
-								<svg class="icon icon-author">
+								<svg class="icon recipe__icon">
 									<use xlink:href="${icons}#icon-author" />
 								</svg>
 								<span class="recipe__publisher">${result.publisher}</span>
 							</div>
-							<div class="recipe__info">
+							<div class="recipe__label">
 								<ul class="recipe__tags">
 									${result.tags
 										.slice(0, 5)
