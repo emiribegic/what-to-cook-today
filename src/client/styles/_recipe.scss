@@ -36,6 +36,13 @@
 
 	&__card {
 		padding: 0 1rem;
+		will-change: transform;
+		transition: transform 450ms;
+
+		&:hover {
+			transition: transform 125ms;
+			transform: translateY(-10px);
+		}
 	}
 
 	&__meta {
