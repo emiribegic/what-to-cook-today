@@ -17,9 +17,7 @@ class PaginationUI extends BaseUI {
 
 	scrollToTop() {
 		const recipeSec = document.querySelector('.recipe');
-		recipeSec.scrollIntoView({
-			behavior: 'smooth',
-		});
+		recipeSec.scrollIntoView();
 	}
 
 	_generateMarkup() {
