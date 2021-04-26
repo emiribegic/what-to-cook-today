@@ -42,6 +42,7 @@ const handlePage = function (goToPage) {
 	recipeUI.render(model.getResultsPerPage(goToPage));
 
 	// 2. Show pagination based on user clicks
+	paginationUI.scrollToTop();
 	paginationUI.render(model.state);
 };
 

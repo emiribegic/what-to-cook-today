@@ -15,6 +15,13 @@ class PaginationUI extends BaseUI {
 		});
 	}
 
+	scrollToTop() {
+		const recipeSec = document.querySelector('.recipe');
+		recipeSec.scrollIntoView({
+			behavior: 'smooth',
+		});
+	}
+
 	_generateMarkup() {
 		const curPage = this._data.page;
 		const numPage = Math.ceil(
