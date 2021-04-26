@@ -12,8 +12,6 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static('dist'));
 
-app.get('/', (req, res) => res.sendFile('index.html', { root: '../../dist' }));
-
 app.post('/recipe', async (req, res) => {
 	// Receive input data from client side, make API call and send fetched data to client side
 	try {

@@ -1,5 +1,3 @@
-import icons from '../img/symbol-defs.svg';
-
 class SearchForm {
 	_parentElement = document.querySelector('.search__form');
 

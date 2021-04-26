@@ -10,7 +10,6 @@ export const timeout = function (s) {
 	});
 };
 
-// TODO Decide how to render h and m
 export const shortEnglishHumanizer = humanizeDuration.humanizer({
 	delimiter: ' ',
 	spacer: '',

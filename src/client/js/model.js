@@ -1,5 +1,5 @@
 import { timeout } from './helper';
-import { API_URL, TIMEOUT_SEC, RECIPES_PER_PAGE } from './config';
+import { TIMEOUT_SEC, RECIPES_PER_PAGE } from './config';
 
 export const state = {
 	searchResults: {},
@@ -11,7 +11,7 @@ export const state = {
 export const fetchRecipe = async input => {
 	// Send input data to server side
 	const res = await Promise.race([
-		fetch(API_URL, {
+		fetch('/recipe', {
 			method: 'POST',
 			credentials: 'same-origin',
 			mode: 'cors',
@@ -26,11 +26,7 @@ export const fetchRecipe = async input => {
 	// Receieve fetched data from server side
 	try {
 		const json = await res.json();
-		// TODO Delete later
-		// console.log(json);
 
-		// TODO Currently logs the error msg but with return no msg will be logged
-		// if (!json.hits[0]) return;
 		state.searchResults = {
 			keyword: json.q,
 			count: json.hits.length,

@@ -9,9 +9,13 @@ module.exports = {
 	entry: './src/client/index.js',
 	stats: 'verbose',
 	devServer: {
-		contentBase: path.join(__dirname, 'dist'),
-		compress: true,
+		host: 'localhost',
 		port: 9000,
+		proxy: {
+			context: () => true,
+			target: 'http://localhost:8083',
+			secure: false,
+		},
 	},
 	module: {
 		rules: [
