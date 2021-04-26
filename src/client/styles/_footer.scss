@@ -29,6 +29,13 @@
 .icon-sns {
 	width: 1.5rem;
 	height: 1.5rem;
+	will-change: transform;
+	transition: transform 250ms;
+
+	&:hover {
+		transition: transform 125ms;
+		transform: scale(1.25);
+	}
 }
 
 #edamam-badge {
