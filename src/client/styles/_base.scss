@@ -4,21 +4,11 @@ $font-medium: 300 0.75rem 'Poppins', sans-serif;
 $font-small: 300 0.5rem 'Poppins', sans-serif;
 
 // // COLOR
-$light-grey: rgb(161, 161, 161);
+$light-grey: rgba(161, 161, 161, 0.7);
 $dark-grey: #777;
-// $pink: rgb(255, 192, 203);
-// $blue: rgb(167, 223, 255);
-// $orange: rgb(243, 174, 133);
-// $green: rgb(165, 231, 206);
 
-// // MARGIN
-// $center-w-margin: 0 auto;
-
-// RESPONSIVE BREAKPOINTS
-// $bp-largest: 75rem; // 1200px
-// $bp-large: 62rem; // 992px
-$bp-medium: 49rem; // 784px;
-$bp-small: 33rem; // 528px;
+// PADDING
+$default-padding: 1rem;
 
 * {
 	margin: 0;

@@ -21,7 +21,7 @@
 
 .recipe {
 	&__count {
-		padding: 1rem;
+		padding: $default-padding;
 	}
 
 	&__result {
@@ -31,7 +31,7 @@
 		grid-row-gap: 3rem;
 		justify-items: center;
 		align-items: stretch;
-		padding: 1rem;
+		padding: $default-padding;
 	}
 
 	&__card {
@@ -71,7 +71,7 @@
 		padding: 0.25rem 0.5rem;
 		margin: 0.5rem 0.5rem 0 0;
 		font: $font-small;
-		border: 1px solid $light-grey;
+		border: none;
 		background: $light-grey;
 	}
 
@@ -79,7 +79,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 1rem;
+		padding: $default-padding;
 	}
 
 	&__btn {
