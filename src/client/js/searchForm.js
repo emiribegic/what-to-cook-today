@@ -11,16 +11,9 @@ class SearchForm {
 		this._parentElement.querySelector('.search__bar').value = '';
 	}
 
-	hideKeyboard() {
-		document.activeElement.blur();
-		const inputs = document.querySelectorAll('input');
-		inputs.forEach(i => i.blur());
-	}
-
 	addHandlerSearch(handler) {
 		this._parentElement.addEventListener('submit', function (e) {
 			e.preventDefault();
-			this.hideKeyboard();
 			handler();
 		});
 	}
