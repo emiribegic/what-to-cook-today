@@ -16,5 +16,9 @@
 		&:focus {
 			outline: none;
 		}
+
+		&:required {
+			box-shadow: none;
+		}
 	}
 }
