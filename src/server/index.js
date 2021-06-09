@@ -4,7 +4,6 @@ const app = express();
 const port = process.env.PORT || 8083;
 const fetch = require('node-fetch');
 const url = 'https://api.edamam.com/search?';
-let input = [];
 require('dotenv').config();
 
 app.use(express.urlencoded({ extended: false }));
