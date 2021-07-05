@@ -29,7 +29,6 @@ const handleRecipe = async () => {
 
 		// 5. Show pagination
 		paginationUI.render(model.state);
-		console.log(model.state, model.getResultsPerPage());
 	} catch (err) {
 		console.error(err);
 		searchResultUI.showError();
