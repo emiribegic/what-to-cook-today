@@ -81,9 +81,7 @@ const port = process.env.PORT || 8083; // Change if needed
 
 5. Sign up for API keys at:
 
--   [EDAMAM Recipe Search API](https://developer.edamam.com/edamam-docs-recipe-api)
-    <br>  
-    **_I use free version_**
+-   [EDAMAM Recipe Search API](https://developer.edamam.com/edamam-docs-recipe-api) (I use free version)
 
 6. Configure environment variables using dotenv package
     1. Install the dotenv package
