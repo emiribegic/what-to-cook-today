@@ -1,11 +1,11 @@
-# What To Cook Today
+# What To Cook Today?
 
 <img src="https://github.com/emiribegic/what-to-cook-today/blob/main/demo/recipe_demo.gif" alt="What To Cook Today" width="700px">
 For demo, please visit at https://what-to-cook-today.herokuapp.com/
 
 ## Description
 
-What To Cook Today is a simple single-page web application that allows users to search through web recipes.
+What To Cook Today? is a simple single-page web application that allows users to search through web recipes.
 Each successful search creates up to 100 recipe cards and displays them with calories, cooking time (if available), publisher of recipes, and health labels on page 10 each.
 <br>
 Inspired by Jonas Schmedtmann's Udemy course, partly cloned to practice ES6 Classes.
