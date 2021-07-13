@@ -16,7 +16,7 @@ Inspired by Jonas Schmedtmann's Udemy course, partly cloned to practice ES6 Clas
 -   Node.js / Express.js
 -   [Humanize Duration](https://github.com/EvanHahn/HumanizeDuration.js)
 -   Webpack
--   HTML / SCSS
+-   HTML / Sass
 -   Workbox
 -   [EDAMAM Recipe Search API](https://developer.edamam.com/edamam-docs-recipe-api)
 
