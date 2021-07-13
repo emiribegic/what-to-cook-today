@@ -1,4 +1,4 @@
-import icons from '../img/symbol-defs.svg';
+import icons from '../../img/symbol-defs.svg';
 import BaseUI from './baseUI';
 
 class PaginationUI extends BaseUI {

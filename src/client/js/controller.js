@@ -1,9 +1,9 @@
 import * as model from './model.js';
-import searchForm from './searchForm';
-import searchResultUI from './searchResultUI';
-import recipeUI from './recipeUI';
-import paginationUI from './paginationUI';
-import renderIcons from './renderIcons.js';
+import searchForm from './view/searchForm';
+import searchResultUI from './view/searchResultUI';
+import recipeUI from './view/recipeUI';
+import paginationUI from './view/paginationUI';
+import renderIcons from './view/renderIcons';
 
 // Load icons
 const loadIcons = function () {

@@ -1,7 +1,7 @@
-import icons from '../img/symbol-defs.svg';
+import icons from '../../img/symbol-defs.svg';
 import BaseUI from './baseUI';
 
-import { shortEnglishHumanizer } from './helper';
+import { shortEnglishHumanizer } from '../helper';
 
 class RecipeUI extends BaseUI {
 	_parentElement = document.querySelector('.recipe__result');

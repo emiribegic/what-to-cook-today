@@ -1,4 +1,4 @@
-import icons from '../img/symbol-defs.svg';
+import icons from '../../img/symbol-defs.svg';
 
 class RenderIcons {
 	_parentForm = document.querySelector('.search__btn');
